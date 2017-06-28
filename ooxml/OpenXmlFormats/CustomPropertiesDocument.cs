@@ -6,7 +6,7 @@ namespace NPOI.OpenXmlFormats
 {
     public class CustomPropertiesDocument
     {
-        internal static XmlSerializer serializer = new XmlSerializer(typeof(CT_CustomProperties));
+        internal static XmlSerializer serializer = XmlSerializer.FromTypes(new[] { typeof(CT_CustomProperties) })[0]; // FIX 4 VB.NET
         internal static XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces(new XmlQualifiedName[] {
             new XmlQualifiedName("", "http://schemas.openxmlformats.org/spreadsheetml/2006/main"),
             new XmlQualifiedName("vt", "http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes")
